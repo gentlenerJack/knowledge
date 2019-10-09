@@ -1,0 +1,715 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IO多路复用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="7.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    知识点
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    django为什么把模板独立
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Github和gitlab的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    celery
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    celery的适用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    异步非阻塞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4.4" data-path="23.html">
+            
+                <a href="23.html">
+            
+                    
+                    IO多路复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    mysql
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    mysql分表分库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    数据库优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    数据持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    twemproxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    发布订阅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" >
+            
+                <span>
+            
+                    
+                    基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                    面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    内存管理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.3" data-path="16.html">
+            
+                <a href="16.html">
+            
+                    
+                    内存泄露
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    线程、进程、协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    cookie、session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.6" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.7" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >IO多路复用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="python&#x4E2D;io&#x591A;&#x8DEF;&#x590D;&#x7528;&#xFF1F;">Python&#x4E2D;IO&#x591A;&#x8DEF;&#x590D;&#x7528;&#xFF1F;</h1>
+<pre><code>IO&#x591A;&#x8DEF;&#x590D;&#x7528;&#x662F;IO&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x79CD;,&#x662F;&#x4E00;&#x79CD;&#x5355;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x591A;&#x5E76;&#x53D1;&#x7684;IO&#x64CD;&#x4F5C;&#x7684;&#x65B9;&#x6848;
+&#x5E38;&#x89C1;&#x7684;IO&#xFF1A;
+ &#x2460;&#x963B;&#x585E;IO &#x2461;&#x975E;&#x963B;&#x585E;IO &#x2462;IO&#x591A;&#x8DEF;&#x590D;&#x7528; &#x2463;&#x5F02;&#x6B65;IO
+
+&#x540C;&#x6B65;IO
+  &#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x53D1;&#x751F;&#x963B;&#x585E;&#x5462;?&#x5176;&#x6839;&#x672C;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x5F53;&#x6570;&#x636E;&#x51C6;&#x5907;&#x597D;&#x4E4B;&#x540E;,&#x5185;&#x6838;&#x6001;&#x5411;&#x7528;&#x6237;&#x6001;&#x8F6C;&#x53D1;&#x7684;&#x65F6;&#x5019;&#x547C;&#x53EB;&#x8FDB;&#x7A0B;&#x6765;&#x63A5;&#x53D7;,&#x8FD9;&#x4E2A;&#x8F6C;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;,&#x7B49;&#x8F6C;&#x53D1;&#x7ED3;&#x675F;&#x540E;,&#x963B;&#x585E;&#x63A5;&#x53D7;
+
+&#x5F02;&#x6B65;IO
+  &#x4E3A;&#x4EC0;&#x4E48;&#x5F02;&#x6B65;&#x662F;&#x6CA1;&#x6709;&#x963B;&#x585E;&#x7684;&#x64CD;&#x4F5C;&#x5462;,&#x5176;&#x6839;&#x672C;&#x539F;&#x56E0;&#x4E5F;&#x662F;&#x56E0;&#x4E3A;,&#x5728;&#x5185;&#x6838;&#x6001;&#x5411;&#x7528;&#x6237;&#x6001;&#x8F6C;&#x53D1;&#x7ED3;&#x675F;&#x540E;,&#x624D;&#x53EB;&#x8FDB;&#x7A0B;&#x6765;&#x63A5;&#x6536;,&#x8FDB;&#x7A0B;&#x4E0D;&#x7528;&#x7B49;&#x5F85;,&#x76F4;&#x63A5;&#x62FF;&#x5230;&#x6570;&#x636E;.
+
+&#x540C;&#x6B65;&#x5F02;&#x6B65;&#x533A;&#x522B;
+&#x540C;&#x6B65;IO&#x662F;&#x5FEB;&#x9910;&#x6027;&#x8D28;&#x9910;&#xFF1B;&#x597D;&#x4E86;&#x4EE5;&#x540E;&#x4F60;&#x8FC7;&#x53BB;&#x53D6;&#x98DF;&#x7269;,&#x62FF;&#x98DF;&#x7269;&#x56DE;&#x5230;&#x5EA7;&#x4F4D;,&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x662F;&#x8017;&#x65F6;&#x7684;&#x64CD;&#x4F5C;.
+&#x5F02;&#x6B65;IO&#x662F;&#x5927;&#x9910;&#x6027;&#x8D28;&#xFF1B;&#x6211;&#x4EEC;&#x9910;&#x597D;&#x4E86;&#x4EE5;&#x540E;,&#x5927;&#x5BB6;&#x8FD8;&#x5728;&#x5EA7;&#x4F4D;&#x4E0A;&#x804A;&#x5929;,&#x670D;&#x52A1;&#x5458;&#x5C31;&#x4F1A;&#x628A;&#x98DF;&#x7269;&#x7AEF;&#x5230;&#x684C;&#x5B50;&#x4E0A;,&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5403;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;,&#x9AD8;&#x7AEF;&#x670D;&#x52A1;.
+
+IO&#x591A;&#x8DEF;&#x590D;&#x7528;&#x7684;&#x673A;&#x5236;&#xFF1A;
+</code></pre><p>&#x3000;&#x3000;&#x3000;&#x3000;select&#x673A;&#x5236;&#xFF1A; Windows&#x3001;Linux
+poll&#x673A;&#x5236;    &#xFF1A;</p>
+<p>Linux &#x548C;select&#x76D1;&#x542C;&#x673A;&#x5236;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x76D1;&#x542C;&#x5217;&#x8868;&#x91CC;&#x9762;&#x7684;&#x6570;&#x91CF;&#x6CA1;    &#x6709;&#x9650;&#x5236;&#xFF0C;select&#x9ED8;&#x8BA4;&#x9650;&#x5236;&#x662F;1024&#x4E2A;&#xFF0C;&#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x4E24;&#x4E2A;&#x90FD;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8F6E;&#x8BE2;&#x6BCF;&#x4E00;&#x4E2A;&#x88AB;&#x76D1;    &#x542C;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#xFF08;&#x5982;&#x679C;&#x6570;&#x91CF;&#x5F88;&#x5927;&#xFF0C;&#x5176;&#x5B9E;&#x6548;&#x7387;&#x4E0D;&#x592A;&#x597D;&#xFF09;&#xFF0C;&#x770B;&#x662F;&#x5426;&#x6709;&#x53EF;&#x8BFB;&#x64CD;&#x4F5C;&#x3002;
+&#x3000;&#x3000;&#x3000;&#x3000;<br>epoll&#x673A;&#x5236;  &#xFF1A; Linux    #&#x5B83;&#x7684;&#x76D1;&#x542C;&#x673A;&#x5236;&#x548C;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#xFF0C;&#x4ED6;&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x7684;&#x5BF9;        &#x8C61;&#x7ED1;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x4F60;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6709;&#x6D88;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x89E6;&#x53D1;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x7528;&#x6237;&#x5C31;&#x8FDB;        &#x884C;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x6765;&#x62F7;&#x8D1D;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x8F6E;&#x8BE2;&#x76D1;&#x542C;&#x6240;&#x6709;&#x7684;&#x88AB;&#x76D1;&#x542C;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6548;&#x7387;&#x9AD8;&#x5F88;&#x591A;&#x3002;</p>
+<p>&#x4EC0;&#x4E48;&#x662F;IO&#xFF1F;
+    i&#x5C31;&#x662F;input&#x8F93;&#x5165;,O&#x5C31;&#x662F;output&#x8F93;&#x51FA;,&#x4E00;&#x8D77;&#x5C31;&#x662F;&#x57FA;&#x672C;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x8BBE;&#x5907;
+    I/O&#x4E5F;&#x5C31;&#x662F;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x5730;&#x5740;&#x3002;&#x6BCF;&#x4E2A;&#x8BBE;&#x5907;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x4E13;&#x7528;&#x7684;I/O&#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x5904;&#x7406;&#x81EA;&#x5DF1;&#x7684;        &#x8F93;&#x5165;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x3002;
+    I/O&#x5730;&#x5740;&#x7EDD;&#x5BF9;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8BBE;&#x5907;&#x7684;I/O&#x5730;&#x5740;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x7CFB;&#x7EDF;&#x786C;&#x4EF6;&#x5C31;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 异步非阻塞">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IO多路复用","level":"1.2.4.4","depth":3,"next":{"title":"mysql","level":"1.2.5","depth":2,"ref":"","articles":[{"title":"mysql分表分库","level":"1.2.5.1","depth":3,"path":"day01/6.md","ref":"day01/6.md","articles":[]},{"title":"读写分离","level":"1.2.5.2","depth":3,"path":"day01/8.md","ref":"day01/8.md","articles":[]},{"title":"数据库优化","level":"1.2.5.3","depth":3,"path":"day01/22.md","ref":"day01/22.md","articles":[]}]},"previous":{"title":"异步非阻塞","level":"1.2.4.3","depth":3,"path":"day01/7.md","ref":"day01/7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"day01/23.md","mtime":"2019-10-09T08:47:53.346Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-09T08:27:31.804Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,718 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>内存泄露 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="17.html" />
+    
+    
+    <link rel="prev" href="15.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    知识点
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    django为什么把模板独立
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Github和gitlab的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    celery
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    celery的适用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    异步非阻塞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="23.html">
+            
+                <a href="23.html">
+            
+                    
+                    IO多路复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    mysql
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    mysql分表分库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="22.html">
+            
+                <a href="22.html">
+            
+                    
+                    数据库优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    读写分离
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    数据持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    twemproxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="13.html">
+            
+                <a href="13.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="20.html">
+            
+                <a href="20.html">
+            
+                    
+                    发布订阅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" >
+            
+                <span>
+            
+                    
+                    基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="14.html">
+            
+                <a href="14.html">
+            
+                    
+                    面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    内存管理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8.3" data-path="16.html">
+            
+                <a href="16.html">
+            
+                    
+                    内存泄露
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="17.html">
+            
+                <a href="17.html">
+            
+                    
+                    线程、进程、协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5" data-path="18.html">
+            
+                <a href="18.html">
+            
+                    
+                    cookie、session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.6" data-path="19.html">
+            
+                <a href="19.html">
+            
+                    
+                    内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.7" data-path="21.html">
+            
+                <a href="21.html">
+            
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >内存泄露</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>python&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;
+&#x4EC0;&#x4E48;&#x662F;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;:
+&#x7531;&#x4E8E;&#x758F;&#x5FFD;&#x6216;&#x9519;&#x8BEF;&#x9020;&#x6210;&#x7A0B;&#x5E8F;&#x672A;&#x80FD;&#x91CA;&#x653E;&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5206;&#x914D;&#x67D0;&#x6BB5;&#x5185;&#x5B58;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x8BBE;&#x8BA1;&#x9519;&#x8BEF;&#xFF0C;&#x5931;&#x53BB;&#x4E86;&#x5BF9;&#x8BE5;&#x6BB5;&#x5185;&#x5B58;&#x7684;&#x63A7;&#x5236;&#xFF0C;&#x56E0;&#x800C;&#x9020;&#x6210;&#x4E86;&#x5185;&#x5B58;&#x7684;&#x6D6A;&#x8D39;&#xFF0C;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x901F;&#x5EA6;&#x51CF;&#x6162;&#x751A;&#x81F3;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x7B49;&#x4E25;&#x91CD;&#x540E;&#x679C;&#x3002;
+&#x6210;&#x56E0;</p>
+<ol>
+<li>Python &#x672C;&#x8EAB;&#x7684;&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x65E0;&#x6CD5;&#x56DE;&#x6536; &#x91CD;&#x5199;&#x4E86;del&#x65B9;&#x6CD5;&#x7684;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x5BF9;&#x8C61;</li>
+<li>python&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x88AB;&#x7981;&#x7528;&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x6210;debug&#x72B6;&#x6001;, &#x5783;&#x573E;&#x6240;&#x5360;&#x7684;&#x5185;&#x5B58;&#x4E0D;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x91CA;&#x653E;
+&#x5982;&#x4F55;&#x907F;&#x514D;
+&#xF06C;    &#x7BA1;&#x7406;&#x597D;&#x6BCF;&#x4E2A;python&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5C3D;&#x91CF;&#x5728;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x65AD;&#x5F00;&#x6240;&#x6709;&#x5F15;&#x7528;,del object &#x6765;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570;
+&#xF06C;    &#x5C3D;&#x91CF;&#x5C11;&#x901A;&#x8FC7;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x7EC4;&#x7EC7;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x6539;&#x7528;weakref&#x505A;&#x5F31;&#x5F15;&#x7528;&#x6216;&#x8005;&#x7528;id&#x4E4B;&#x7C7B;&#x7684;&#x53E5;&#x67C4;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;
+&#x5F31;&#x5F15;&#x7528;:&#x4E0E;&#x5F3A;&#x5F15;&#x7528;&#x76F8;&#x5BF9;&#xFF0C;&#x5B83;&#x662F;&#x4E0D;&#x4F1A;&#x88AB;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x9500;&#x6BC1;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x53EA;&#x5269;&#x4E0B;&#x4E00;&#x4E2A;&#x5F31;&#x5F15;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x80FD;&#x88AB;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x6536;&#x56DE;&#x901A;&#x8FC7;&#x8C03;&#x7528;weakref&#x6A21;&#x5757;&#x7684;ref(obj[,callback])&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F31;&#x5F15;&#x7528;,callback&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x5F31;&#x5F15;&#x7528;&#x88AB;&#x9500;&#x6BC1;&#x65F6;&#x8C03;&#x7528;&#x3002;&#x56DE;&#x8C03;&#x51FD;&#x6570;callback&#x8981;&#x6C42;&#x5355;&#x4E2A;&#x53C2;&#x6570;&#xFF08;&#x5F31;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#xFF09;&#x3002;
+&#xF06C;    &#x901A;&#x8FC7;gc&#x6A21;&#x5757;&#x7684;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x51FA;&#x6BCF;&#x6B21;&#x5783;&#x573E;&#x56DE;&#x6536;&#x6709;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x5904;&#x7406;&#xFF0C;&#x518D;&#x9010;&#x4E2A;&#x9010;&#x4E2A;&#x5904;&#x7406;
+&#x68C0;&#x6D4B;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; sys.getrefcount(obj) &#x6765;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x5426;&#x4E3A; 0 &#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x4E0D;&#x4E3A; 0&#xFF0C;&#x8BF4;&#x660E;&#x5728;&#x6B64;&#x523B;&#x5BF9;&#x8C61; obj &#x662F;&#x4E0D;&#x80FD;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x56DE;&#x6536;&#x6389;&#x7684;&#x3002;</li>
+<li>&#x5728;gc&#x6A21;&#x5757;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x7ED3;&#x5408;pyrasite&#x5DE5;&#x5177;&#xFF0C;&#x5BF9;&#x5F53;&#x524D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x65B9;&#x9762;&#x7684;&#x8C03;&#x8BD5;&#x3002;
+pyrasite &#x662F;&#x7528;&#x4E8E;&#x5C06;&#x4EFB;&#x610F;&#x4EE3;&#x7801;&#x6CE8;&#x5165;&#x8FD0;&#x884C;&#x7684; Python &#x8FDB;&#x7A0B;&#x7684;&#x5DE5;&#x5177;
+gc.isenabled() #&#x5982;&#x679C;&#x5F53;&#x524D;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x5668;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#xFF0C;&#x8FD4;&#x56DE;True.  gc.disable() #&#x5173;&#x95ED;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x5668;&#x3002;&#x6B64;&#x65F6;&#x82E5;&#x4EA7;&#x751F;&#x4E86;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x91CA;&#x653E;&#xFF0C;&#x4F1A;&#x6301;&#x7EED;&#x5360;&#x7528;&#x5185;&#x5B58;&#x3002; gc.collect() #&#x6536;&#x96C6;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x6536;&#x96C6;&#x5668;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x91CA;&#x653E;&#x6240;&#x6709;&#x6536;&#x96C6;&#x5230;&#x7684;&#x5BF9;&#x8C61;&#x5E76;&#x5C06;&#x65E0;&#x6CD5;&#x91CA;&#x653E;&#x7684;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x81F3;gc.garbage&#x5217;&#x8868;&#x4E2D;&#x3002; gc.set_debug() # &#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x6536;&#x96C6;&#x5668;&#x7684;&#x8C03;&#x8BD5;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x8BE5;&#x51FD;&#x6570;&#x6253;&#x5370;&#x7ECF;&#x8FC7;&#x6536;&#x96C6;&#x5668;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x4FE1;&#x606F;&#xFF0C;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x5BF9;&#x8C61;&#x4FE1;&#x606F;&#x7B49;&#x7B49;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x81F3;gc.garbage&#x5217;&#x8868;&#x4E2D;(&#x5373;&#x4E0D;&#x91CA;&#x653E;&#x8BE5;&#x5BF9;&#x8C61;)&#xFF0C;&#x4EE5;&#x4FBF;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5B9A;&#x4F4D;&#x3002; gc.garbage # &#x5B58;&#x653E;&#x65E0;&#x6CD5;&#x91CA;&#x653E;&#x7684;&#x5BF9;&#x8C61;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;len(gc.garbage)&#x67E5;&#x770B;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x7684;&#x5BF9;&#x8C61;&#x4E2A;&#x6570;&#x3002;</li>
+</ol>
+<p>(1)&#xFF0E;&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;id&#x5E76;&#x4F7F;&#x7528;pyrasite&#x6A21;&#x5757;&#x5728;&#x8BE5;&#x8FDB;&#x7A0B;&#x8FDB;&#x884C;gc&#x8C03;&#x8BD5;</p>
+<p>(2)&#xFF0E;&#x83B7;&#x53D6;&#x5F53;&#x524D;gc&#x72B6;&#x6001;&#xFF0C;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#x76F8;&#x5173;&#x529F;&#x80FD;&#x6A21;&#x5757;</p>
+<p>(3).&#x624B;&#x52A8;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x6536;&#x96C6;&#xFF0C;&#x5206;&#x6790;&#x6536;&#x96C6;&#x7ED3;&#x679C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="15.html" class="navigation navigation-prev " aria-label="Previous page: 内存管理机制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="17.html" class="navigation navigation-next " aria-label="Next page: 线程、进程、协程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"内存泄露","level":"1.2.8.3","depth":3,"next":{"title":"线程、进程、协程","level":"1.2.8.4","depth":3,"path":"day01/17.md","ref":"day01/17.md","articles":[]},"previous":{"title":"内存管理机制","level":"1.2.8.2","depth":3,"path":"day01/15.md","ref":"day01/15.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"day01/16.md","mtime":"2019-10-09T08:21:06.947Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-09T08:27:31.804Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
