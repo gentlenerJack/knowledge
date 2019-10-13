@@ -68,6 +68,7 @@
          * [列表去重](day01/40.md)
          * [Unicode,utf-8,gbk等编码之间的区别?](day01/41.md)
          * [关于Python程序的运行性能方面,有什么手段能提升性能?](day01/42.md)
+         * [python检测工具](day01/55.md)
         * [正则贪婪和非贪婪的区别](day01/70.md)
         * [functools](day01/71.md)
         * [递归实现无限级分类](day01/72.md)
