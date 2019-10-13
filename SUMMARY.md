@@ -46,3 +46,6 @@
         * [实现一个Singleton 单例类](day01/38.md)
         * [Get和POST的区别](day01/36.md)
         * [生产者与消费者的应用场景](day01/39.md)
+        * [列表去重](day01/40.md)
+        * [Unicode,utf-8,gbk等编码之间的区别?](day01/41.md)
+        * [关于Python程序的运行性能方面,有什么手段能提升性能?](day01/42.md)
