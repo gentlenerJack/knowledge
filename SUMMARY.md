@@ -29,8 +29,7 @@
         * [索引](day01/44.md)
         * [mysql日志](day01/45.md)
         * [mysql优化](day01/47.md)
-        * [B Tree 和 B+Tree 的区别](day0140.md)
-
+        * [B Tree 和 B+Tree 的区别](day01/40.md)
     * nginx
         * [nginx](day01/10.md)
         * [读写分离](day01/8.md)
@@ -44,8 +43,8 @@
          * [redis分布式锁](day01/redis分布式锁.md)
          * [基于redis分布式锁Redlock实现机制](day01/基于redis分布式锁Redlock实现机制.md)
          * [Redis雪崩和穿刺问题 如何避免](day01/Redis雪崩和穿刺问题如何避免.md)
-         * [Redis的数据类型底层实现](day0139.md)
-         * [什么是 codis](day0140.md)
+         * [Redis的数据类型底层实现](day01/111.md)
+         * [什么是 redis](day01/222.md)
     * 基础
          * [基于redis的列表实现先进先出并写出代码](day01/67.md)
          * [redis消息订阅模式](day01/69.md)
