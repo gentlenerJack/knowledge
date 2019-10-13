@@ -31,6 +31,8 @@
         * [twemproxy](day01/12.md)
         * [数据类型](day01/13.md)
         * [发布订阅](day01/20.md)
+        * [基于redis的列表实现先进先出并写出代码](day01/67.md)
+        * [redis消息订阅模式](day01/69.md)
     * 基础
         * [面向对象](day01/14.md)
         * [内存管理机制](day01/15.md)
@@ -45,4 +47,5 @@
         * [面向对象的设计模式](day01/37.md)
         * [实现一个Singleton 单例类](day01/38.md)
         * [Get和POST的区别](day01/36.md)
+        * [*args,**kwargs有什么区别并写出代码](day01/68.md)
 
