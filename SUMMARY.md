@@ -17,6 +17,7 @@
          * [mysql分表分库](day01/6.md) 
          * [读写分离](day01/8.md) 
          * [数据库优化](day01/22.md)
+         * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
     * nginx
          * [nginx](day01/10.md) 
          * [读写分离](day01/8.md) 
