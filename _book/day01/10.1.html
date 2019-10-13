@@ -1,0 +1,507 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>redis集群</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><p><strong><span>Redis</span></strong><span>集群方案总结</span></p><p>&nbsp;</p><p><strong><span>Redis</span></strong><span>支持的数据结构</span></p><ul><li><p><span>字符串（String）</span></p></li><li><p><span>哈希（Hash）</span></p></li><li><p><span>列表（List）</span></p></li><li><p><span>集合（Set）</span></p></li><li><p><span>有序集合（Sorted Set）</span></p></li><li><ul><li><span>支持针对score作范围查询</span></li></ul></li><li><p><span>位数组</span></p></li><li><p><span>HyperLogLog</span></p></li><li><ul><li><span>做基数统计的算法</span></li></ul></li></ul><p><strong><span>Redis</span></strong><span>支持的操作</span></p><ul><li><p><span>基本操作</span></p></li><li><ul><li><span>Set get add push pop…</span></li></ul></li><li><p><span>发布/订阅</span></p></li><li><p><span>Pipeline操作</span></p></li><li><p><span>事务</span></p></li><li><ul><li><span>事务支持不完整。不提供回滚命令。</span></li></ul></li><li><p><span>……</span></p></li></ul><p><strong><span>Redis</span></strong><span>适用场景</span></p><ul><li><p><span>KV存储</span></p></li><li><p><span>缓存（ttl LRU...）</span></p></li><li><ul><li><span>Lru是redis达到maxmemory之后，可选的key删除策略。</span></li></ul></li><li><p><span>消息中间件</span></p></li><li><p><span>分布式锁</span></p></li><li><p><span>......</span></p></li></ul><p><strong><span>redis</span></strong><span>集群实现方式</span></p><p><span>实现基础</span><strong><span>——</span></strong><span>分区</span></p><ul><li><span>分区是分割数据到多个Redis实例的处理过程，因此每个实例只保存key的一个子集。</span></li><li><span>通过利用多台计算机内存的和值，允许我们构造更大的数据库。</span></li><li><span>通过多核和多台计算机，允许我们扩展计算能力；通过多台计算机和网络适配器，允许我们扩展网络带宽。</span></li></ul><p><span>集群的几种实现方式</span></p><ul><li><span>客户端分片</span></li><li><span>基于代理的分片</span></li><li><span>路由查询</span></li></ul><p><span>客户端分片</span></p><ul><li><span>由客户端决定key写入或者读取的节点。</span></li><li><span>包括jedis在内的一些客户端，实现了客户端分片机制。</span></li></ul><p><span>原理如下所示：</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>client-partition</span></p><p><span>特性</span></p><ul><li><p><span>优点</span></p></li><li><ul><li><span>简单，性能高。</span></li></ul></li><li><p><span>缺点</span></p></li><li><ul><li><span>业务逻辑与数据存储逻辑耦合</span></li><li><span>可运维性差</span></li><li><span>多业务各自使用redis，集群资源难以管理</span></li><li><span>不支持动态增删节点</span></li></ul></li></ul><p><span>基于代理的分片</span></p><ul><li><p><span>客户端发送请求到一个代理，代理解析客户端的数据，将请求转发至正确的节点，然后将结果回复给客户端。</span></p></li><li><p><span>开源方案</span></p></li><li><ul><li><span>Twemproxy</span></li><li><span>codis</span></li></ul></li></ul><p><span>基本原理如下所示：</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>proxy-based-partition</span></p><p>&nbsp;</p><p><span>特性</span></p><ul><li><p><span>透明接入</span></p></li><li><ul><li><span>业务程序不用关心后端Redis实例，切换成本低。</span></li></ul></li><li><p><span>Proxy 的逻辑和存储的逻辑是隔离的。</span></p></li><li><p><span>代理层多了一次转发，性能有所损耗。</span></p></li></ul><p><span>路由查询</span></p><ul><li><p><span>将请求发送到任意节点，接收到请求的节点会将查询请求发送到正确的节点上执行。</span></p></li><li><p><span>开源方案</span></p></li><li><ul><li><span>Redis-cluster</span></li></ul></li></ul><p><span>基本原理如下所示：</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p><span>query-routing</span></p><p><span>集群的挑战</span></p><ul><li><p><span>涉及多个key的操作通常是不被支持的。</span></p></li><li><ul><li><span>举例来说，当两个set映射到不同的redis实例上时，你就不能对这两个set执行交集操作。</span></li></ul></li><li><p><span>涉及多个key的redis事务不能使用。</span></p></li><li><p><span>不能保证集群内的数据均衡。</span></p></li><li><ul><li><span>分区的粒度是key，如果某个key的值是巨大的set、list，无法进行拆分。</span></li></ul></li><li><p><span>增加或删除容量也比较复杂。</span></p></li><li><ul><li><span>redis集群需要支持在运行时增加、删除节点的透明数据平衡的能力。</span></li></ul></li></ul><p><strong><span>redis</span></strong><span>集群各种方案原理</span></p><p><strong><span>Twemproxy</span></strong></p><ul><li><span>Proxy-based</span></li><li><span>twtter开源，C语言编写，单线程。</span></li><li><span>支持 Redis 或 Memcached 作为后端存储。</span></li></ul><p><strong><span>Twemproxy</span></strong><span>高可用部署架构</span></p><p>&nbsp;</p><p>&nbsp;</p><p><strong><span>Twemproxy</span></strong><span>特性</span></p><ul><li><p><span>支持失败节点自动删除</span></p></li><li><ul><li><span>与redis的长连接，连接复用，连接数可配置</span></li></ul></li><li><p><span>自动分片到后端多个redis实例上</span></p></li><li><ul><li><span>多种hash算法：能够使用不同的分片策略和散列函数</span></li><li><span>支持一致性hash，但是使用DHT之后，从集群中摘除节点时，不会进行rehash操作</span></li><li><span>可以设置后端实例的权重</span></li></ul></li><li><p><span>支持redis pipelining 操作</span></p></li><li><p><span>支持状态监控</span></p></li><li><p><span>支持select切换数据库</span></p></li></ul><p><strong><span>Twemproxy</span></strong><span>不足</span></p><ul><li><p><span>性能低：代理层损耗 &amp;&amp; 本身效率低下</span></p></li><li><p><span>Redis功能支持不完善</span></p></li><li><ul><li><span>不支持针对多个值的操作，比如取sets的子交并补等（MGET 和 DEL 除外）</span></li><li><span>不支持Redis的事务操作</span></li><li><span>出错提示还不够完善</span></li></ul></li><li><p><span>集群功能不够完善</span></p></li><li><ul><li><span>仅作为代理层使用</span></li><li><span>本身不提供动态扩容，透明数据迁移等功能</span></li></ul></li><li><p><span>失去维护</span></p></li><li><ul><li><span>最近一次提交在一年之前。</span></li></ul></li></ul><p><span>Twitter内部已经不再使用。</span></p><p><strong><span>redis-cluster</span></strong></p><ul><li><span>redis官网推出，可线性扩展到1000个节点</span></li><li><span>无中心架构</span></li><li><span>一致性哈希思想</span></li><li><span>客户端直连redis服务，免去了proxy代理的损耗</span></li></ul><p><strong><span>Redis Cluster</span></strong><span>模型</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>redis-cluster architecture</span></p><p><strong><span>Redis-cluster</span></strong><span>原理</span></p><ul><li><p><span>Hash slot。</span></p></li><li><ul><li><span>key的空间被分到16384个hash slot里；</span></li><li><span>计算key属于哪个slot，CRC16(key) &amp; 16384。</span></li></ul></li><li><p><span>集群内的每个redis实例监听两个tcp端口，6379（默认）用于服务客户端查询，16379（默认服务端口 + 10000）用于集群内部通信。</span></p></li><li><p><span>节点间状态同步：gossip协议，最终一致性。节点间通信使用轻量的二进制协议，减少带宽占用。</span></p></li></ul><p><strong><span>Redis-cluster</span></strong><span>请求路由方式</span></p><ul><li><p><span>redis-cluster借助客户端实现了混合形式的路由查询</span>
+<span>查询路由并非直接从一个redis节点到另外一个redis，而是借助客户端转发到正确的节点。根据客户端的实现方式，可以分为以下两种：</span></p></li><li><ul><li><span>dummy client</span></li><li><span>smart client</span></li></ul></li><li><p><span>包括Jedis在内的许多redis client，已经实现了对Redis Cluster的支持。</span></p></li></ul><p><span>查询路由的流程如下所示：</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>query router of redis cluster</span></p><p><span>Redis cluster采用这种架构的考虑：</span></p><ul><li><span>减少redis实现的复杂度</span></li><li><span>降低客户端等待的时间。Smart client可以在客户端缓存 slot 与 redis节点的映射关系，当接收到 MOVED 响应时，会修改缓存中的映射关系。请求时会直接发送到正确的节点上，减少一次交互。</span></li></ul><p><strong><span>Redis Cluster</span></strong><span>特性</span></p><ul><li><span>高性能</span></li><li><span>支持动态扩容，对业务透明</span></li><li><span>具备Sentinel的监控和自动Failover能力</span></li></ul><p><strong><span>Redis Cluster</span></strong><span>不足</span></p><ul><li><p><span>官方未提供图形管理工具，运维比较复杂</span></p></li><li><ul><li><span>比如数据迁移，纯手动操作，先分配slot，再将slot中对应的key迁移至新的节点。</span></li></ul></li><li><p><span>要求客户端必须支持cluster协议</span></p></li><li><p><span>Redis命令支持不完整</span></p></li><li><ul><li><span>对于批量的指令，如mget支持不完整；不支持事务；不支持数据库切换，只能使用0号数据库……</span></li></ul></li><li><p><span>集群管理与数据存储耦合</span></p></li><li><ul><li><span>比如如果集群管理有bug，需要升级整个redis。</span></li></ul></li></ul><p><strong><span>Codis</span></strong></p><ul><li><p><span>豌豆荚开源的proxy-based的redis集群方案</span></p></li><li><p><span>支持透明的扩/缩容</span></p></li><li><p><span>运维友好</span></p></li><li><ul><li><span>GUI监控界面和管理工具</span></li></ul></li><li><p><span>同类产品中最全面的redis命令支持</span></p></li></ul><p><strong><span>Codis</span></strong><span>部署拓扑</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>Codis部署拓扑</span></p><p><strong><span>Codis</span></strong><span>数据存储</span></p><ul><li><p><span>数据根据key分布到1024个slot内</span></p></li><li><p><span>Key的slotid计算方法 crc32(key) % 1024</span></p></li><li><p><span>每个 codis-server 负责一部分数据</span></p></li><li><p><span>比如后端有3组codis-server，每个server负责的slot范围可以这样设置：</span></p></li><li><ul><li><span>group0 0-300</span></li><li><span>group1 301-600</span></li><li><span>group2 601-1023</span></li></ul></li></ul><p><strong><span>Codis</span></strong><span>模块简介</span></p><ul><li><p><span>Codis Server</span></p></li><li><ul><li><span>基于 redis-2.8.21 分支开发。增加了额外的数据结构，以支持 slot 有关的操作以及数据迁移指令。</span></li></ul></li><li><p><span>Codis Proxy</span></p></li><li><ul><li><span>客户端连接的 Redis 代理服务, 实现了 Redis 协议。</span></li><li><span>对于同一个业务集群而言，可以同时部署多个 codis-proxy 实例</span></li><li><span>不同 codis-proxy 之间由 codis-dashboard 保证状态同步。</span></li></ul></li><li><p><span>Codis Dashboard</span></p></li><li><ul><li><span>集群管理工具，支持 codis-proxy、codis-server 的添加、删除，以及据迁移等操作。</span></li><li><span>所有对集群的修改都必须通过 codis-dashboard 完成。</span></li></ul></li><li><p><span>Codis Admin</span></p></li><li><ul><li><span>集群管理的命令行工具。</span></li><li><span>可用于控制 codis-proxy、codis-dashboard 状态以及访问外部存储。</span></li></ul></li><li><p><span>Codis FE</span></p></li><li><ul><li><span>集群管理界面。</span></li></ul></li><li><p><span>Codis HA</span></p></li><li><ul><li><span>为集群提供高可用。</span></li><li><span>依赖 codis-dashboard 实例，自动抓取集群各个组件的状态；</span></li><li><span>会根据当前集群状态自动生成主从切换策略，并在需要时通过 codis-dashboard 完成主从切换。</span></li></ul></li><li><p><span>Storage</span></p></li><li><ul><li><span>为集群状态提供外部存储。</span></li><li><span>目前仅提供了 Zookeeper 和 Etcd 两种实现，但是提供了抽象的 interface 可自行扩展。</span></li></ul></li></ul><p><strong><span>Codis</span></strong><span>主从切换</span></p><ul><li><p><span>Codis-HA：自动切换主从的工具。</span></p></li><li><p><span>通过RESTful api从 codis-dashboard 中拉取集群状态</span></p></li><li><p><span>默认以 5s 为周期</span></p></li><li><p><span>该工具会在检测到 master 挂掉的时候主动应用主从切换策略，向codis-dashboard发送主从切换命令。</span></p></li><li><p><span>对自动主从切换的支持比较弱</span></p></li><li><ul><li><span>主从切换的限制较多，必须在系统其他组件状态健康，且距离上次主从同步数据在一定时间间隔内才可以执行。</span></li><li><span>多slave场景，提升其中的一个slave为master，其他的slave仍然会从旧的master同步数据，需要管理员手动操作。</span></li></ul></li></ul><p><strong><span>Codis</span></strong><span>数据迁移流程</span></p><ul><li><p><span>前提：Codis单条数据迁移是原子操作</span></p></li><li><p><span>单条数据迁移过程：</span></p></li><li><ul><li><span>随机选取指定 slot 中的一个 &lt;K,V&gt;</span></li><li><span>将这个&lt;K,V&gt;传输给另外一个 codis-server</span></li><li><span>传输成功后，把本地的这个 &lt;K,V&gt;删除</span></li></ul></li></ul><p><span>迁移过程如下所示：</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>迁移过程中，Codis-dashboard与proxy通过zk通信，路由表信息全部存放在zk，保证所有proxy的视图一致。</span>
+<span> Codis如何保证数据迁移过程的正确及透明？</span></p><ul><li><p><span>codis-config 在实际修改slot状态之前，会确保所有的 proxy 收到这个迁移请求。</span></p></li><li><p><span>迁移过程中, 如果客户端请求 slot 的 key 数据,proxy 会将请求转发到group2上。</span></p></li><li><ul><li><span>proxy会先在group1上强行执行一次 MIGRATE key 将这个键值提前迁移过来，</span></li><li><span>然后再到group2上正常读取</span></li></ul></li></ul><p><strong><span>Codis VS Redis</span></strong></p><figure><table><thead><tr><th><span>对比参数</span></th><th><strong><span>Codis</span></strong></th><th><strong><span>Redis-cluster</span></strong></th></tr></thead><tbody><tr><td><span>Redis版本</span></td><td><span>基于2.8分支开发</span></td><td><span>&gt;= 3.0</span></td></tr><tr><td><span>部署</span></td><td><span>较复杂。</span></td><td><span>简单</span></td></tr><tr><td><span>运维</span></td><td><span>Dashboard,运维方便。</span></td><td><span>运维人员手动通过命令操作。</span></td></tr><tr><td><span>监控</span></td><td><span>可在Dashboard里监控当前redis-server节点情况，较为便捷。</span></td><td><span>不提供监控功能。</span></td></tr><tr><td><span>组织架构</span></td><td><span>Proxy-Based, 类中心化架构，集群管理层与存储层解耦。</span></td><td><span>P2P模型，gossip协议负责集群内部通信。去中心化</span></td></tr><tr><td><span>伸缩性</span></td><td><span>支持动态伸缩。</span></td><td><span>支持动态伸缩</span></td></tr><tr><td><span>主节点失效处理</span></td><td><span>自动选主。</span></td><td><span>自动选主。</span></td></tr><tr><td><span>数据迁移</span></td><td><span>简单。支持透明迁移。</span></td><td><span>需要运维人员手动操作。支持透明迁移。</span></td></tr><tr><td><span>升级</span></td><td><span>基于redis 2.8分支开发，后续升级不能保证；Redis-server必须是此版本的codis，无法使用新版本redis的增强特性。</span></td><td><span>Redis官方推出，后续升级可保证。</span></td></tr><tr><td><span>可靠性</span></td><td><span>经过线上服务验证，可靠性较高。</span></td><td><span>新推出，坑会比较多。遇到bug之后需要等官网升级。</span></td></tr></tbody></table></figure><p><span>升级。</span></p><ol start='' ><li><span>理论上，redis-cluster的性能更高，单次请求的延时低。另外，经过实测，两种架构后端单台redis-server的条件下，TPS基本没有差别。</span></li><li><span>Codis的高可用依赖jodis，或者使用LVS进行高可用部署。</span></li></ol><p><span>我们公司选择</span><strong><span>Codis</span></strong><span>的原因</span></p><ul><li><span>Redis-cluster没有成熟的应用案例</span></li><li><span>Codis支持的命令更加丰富</span></li><li><span>迁移至redis cluster需要修改现有实现；而迁移到codis没这么麻烦，只要使用的redis命令在codis支持的范围之内，只要修改一下配置即可接入。</span></li><li><span>Codis提供的运维工具更加友好</span></li></ul><p><strong><span>Codis</span></strong><span>简单压测</span></p><p><span>单台</span><strong><span>Codis Server</span></strong><span>压测结果</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>三台</span><strong><span>Codis-Server</span></strong><span>的集群压测结果</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>压测结论</span></p><ul><li><span>针对codis集群压测过程中，后端codis server平均CPU占用约为70%~80%。</span></li><li><span>单台codis的TPS在6w~7w左右，集群的TPS在17w左右，可以达到近乎线性扩展的能力</span></li><li><span>测试期间后台codis-server的负载没有跑满，仍然具有继续压测的潜力。</span></li><li><span>测试期间proxy机器负载低，可以支撑更多后端codis server实例。</span></li></ul><p><span>使用</span><strong><span>codis</span></strong><span>注意事项</span></p><ul><li><p><span>不支持的命令</span></p></li><li><ul><li><a href='https://link.jianshu.com/?t=https://github.com/CodisLabs/codis/blob/3.0.3/doc/unsupported_cmds.md'><span>不支持的命令列表</span></a></li></ul></li><li><p><span>防止key冲突</span></p></li><li><ul><li><span>建议现有业务接入codis时，加入项目前缀以作区分。</span></li></ul></li><li><p><span>使用spring data redis操作codis时，只能使用RedisTemplate系列接口，Cache系列接口不可用</span></p></li><li><ul><li><span>Cache系列的接口使用了redis的事务指令，事务在Codis以及Redis Cluster中均未提供支持。</span></li></ul></li><li><p><span>避免key value巨大的数据</span></p></li><li><ul><li><span>吞吐量提升不明显</span></li><li><span>可能造成各codis实例资源占用不均衡</span></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><ul><li><ul><li></li></ul></li></ul><h3><a name="redis集群搭建之官方redis-cluster-搭建实践" class="md-header-anchor"></a><span>redis集群搭建之官方redis cluster 搭建实践</span></h3><p><a href='https://blog.csdn.net/fst438060684/article/details/80712433' target='_blank' class='url'>https://blog.csdn.net/fst438060684/article/details/80712433</a></p></div>
+</body>
+</html>

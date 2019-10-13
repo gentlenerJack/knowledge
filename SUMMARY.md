@@ -3,7 +3,11 @@
 * [说明](README.md)
 * 知识点
     * [加密算法](day01/1.md)
+    * [WebSocket](day01/35.md)
+    * flask
+        * [为什么flask生态不太好为什么还有很多公司用？](day01/31.md)
     * django
+        * [Django和flask的区别](day01/30.md)
         * [django为什么把模板独立](day01/2.md)
         * [缓存](day01/9.md)
         * [jwt的实现原理](day01/35.md)
@@ -12,19 +16,24 @@
          * [Git的常用命令](day01/Git的常用命令.md)
          * [Git如何解决冲突](day01/Git如何解决冲突.md)  
     * celery
-         * [celery的适用场景](day01/4.md) 
-         * [消息队列](day01/5.md) 
-         * [异步非阻塞](day01/7.md) 
-         * [IO多路复用](day01/23.md)
+        * [celery的适用场景](day01/4.md)
+        * [消息队列](day01/5.md)
+        * [异步非阻塞](day01/7.md)
+        * [IO多路复用](day01/23.md)
     * mysql
-         * [mysql分表分库](day01/6.md) 
-         * [读写分离](day01/8.md) 
-         * [数据库优化](day01/22.md)
-         * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
-         *[B Tree 和 B+Tree 的区别](day0140.md)
+        * [mysql分表分库](day01/6.md)
+        * [读写分离](day01/8.md)
+        * [数据库优化](day01/22.md)
+        * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
+        * [数据库导入导出命令](day01/32.md)
+        * [索引](day01/44.md)
+        * [mysql日志](day01/45.md)
+        * [mysql优化](day01/47.md)
+        * [B Tree 和 B+Tree 的区别](day0140.md)
+
     * nginx
-         * [nginx](day01/10.md) 
-         * [读写分离](day01/8.md) 
+        * [nginx](day01/10.md)
+        * [读写分离](day01/8.md)
     * redis
          * [数据持久化](day01/11.md) 
          * [twemproxy](day01/12.md) 
@@ -38,6 +47,9 @@
          * [Redis的数据类型底层实现](day0139.md)
          * [什么是 codis](day0140.md)
     * 基础
+         * [基于redis的列表实现先进先出并写出代码](day01/67.md)
+         * [redis消息订阅模式](day01/69.md)
+         * [redis rabbitmq kafka比较](day01/46.md)
          * [面向对象](day01/14.md)
          * [内存管理机制](day01/15.md)
          * [内存泄露](day01/16.md)
@@ -46,7 +58,13 @@
          * [内置函数](day01/19.md)
          * [filter](day01/21.md)
          * [restful](day01/22.md)
-    
-
-
-
+         * [什么是gevent](day01/33.md)
+         * [简述触发器，函数，试图，存储过程？](day01/34.md)
+         * [面向对象的设计模式](day01/37.md)
+         * [实现一个Singleton 单例类](day01/38.md)
+         * [Get和POST的区别](day01/36.md)
+         * [*args,**kwargs有什么区别并写出代码](day01/68.md)
+         * [生产者与消费者的应用场景](day01/39.md)
+         * [列表去重](day01/40.md)
+         * [Unicode,utf-8,gbk等编码之间的区别?](day01/41.md)
+         * [关于Python程序的运行性能方面,有什么手段能提升性能?](day01/42.md)
