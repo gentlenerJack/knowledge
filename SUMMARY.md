@@ -23,6 +23,9 @@
         * [数据库优化](day01/22.md)
         * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
         * [数据库导入导出命令](day01/32.md)
+        * [索引](day01/44.md)
+        * [mysql日志](day01/45.md)
+        * [mysql优化](day01/47.md)
     * nginx
         * [nginx](day01/10.md)
         * [读写分离](day01/8.md)
@@ -31,8 +34,12 @@
         * [twemproxy](day01/12.md)
         * [数据类型](day01/13.md)
         * [发布订阅](day01/20.md)
+<<<<<<< HEAD
         * [基于redis的列表实现先进先出并写出代码](day01/67.md)
         * [redis消息订阅模式](day01/69.md)
+=======
+        * [redis rabbitmq kafka比较](day01/46.md)
+>>>>>>> f94cd6ddaa54a4f7e0190a47f22d8b56bab02329
     * 基础
         * [面向对象](day01/14.md)
         * [内存管理机制](day01/15.md)
@@ -47,5 +54,12 @@
         * [面向对象的设计模式](day01/37.md)
         * [实现一个Singleton 单例类](day01/38.md)
         * [Get和POST的区别](day01/36.md)
+<<<<<<< HEAD
         * [*args,**kwargs有什么区别并写出代码](day01/68.md)
 
+=======
+        * [生产者与消费者的应用场景](day01/39.md)
+        * [列表去重](day01/40.md)
+        * [Unicode,utf-8,gbk等编码之间的区别?](day01/41.md)
+        * [关于Python程序的运行性能方面,有什么手段能提升性能?](day01/42.md)
+>>>>>>> f94cd6ddaa54a4f7e0190a47f22d8b56bab02329
