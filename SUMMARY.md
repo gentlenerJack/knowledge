@@ -3,7 +3,10 @@
 * [说明](README.md)
 * 知识点
     * [加密算法](day01/1.md)
+    * flask
+         * [为什么flask生态不太好为什么还有很多公司用？](day01/31.md)
     * django
+        * [Django和flask的区别](day01/30.md)
         * [django为什么把模板独立](day01/2.md)
         * [缓存](day01/9.md)
     * git
