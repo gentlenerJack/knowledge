@@ -4,42 +4,41 @@
 * 知识点
     * [加密算法](day01/1.md)
     * flask
-         * [为什么flask生态不太好为什么还有很多公司用？](day01/31.md)
+        * [为什么flask生态不太好为什么还有很多公司用？](day01/31.md)
     * django
         * [Django和flask的区别](day01/30.md)
         * [django为什么把模板独立](day01/2.md)
         * [缓存](day01/9.md)
     * git
-         * [Github和gitlab的区别](day01/3.md)   
+        * [Github和gitlab的区别](day01/3.md)
     * celery
-         * [celery的适用场景](day01/4.md) 
-         * [消息队列](day01/5.md) 
-         * [异步非阻塞](day01/7.md) 
-         * [IO多路复用](day01/23.md)
+        * [celery的适用场景](day01/4.md)
+        * [消息队列](day01/5.md)
+        * [异步非阻塞](day01/7.md)
+        * [IO多路复用](day01/23.md)
     * mysql
-         * [mysql分表分库](day01/6.md) 
-         * [读写分离](day01/8.md) 
-         * [数据库优化](day01/22.md)
-         * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
+        * [mysql分表分库](day01/6.md)
+        * [读写分离](day01/8.md)
+        * [数据库优化](day01/22.md)
+        * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
+        * [数据库导入导出命令](day01/32.md)
     * nginx
-         * [nginx](day01/10.md) 
-         * [读写分离](day01/8.md) 
+        * [nginx](day01/10.md)
+        * [读写分离](day01/8.md)
     * redis
-         * [数据持久化](day01/11.md) 
-         * [twemproxy](day01/12.md) 
-         * [数据类型](day01/13.md)
-         * [发布订阅](day01/20.md)
-         * [分布式集群]]](day01/10.1.md)
+        * [数据持久化](day01/11.md)
+        * [twemproxy](day01/12.md)
+        * [数据类型](day01/13.md)
+        * [发布订阅](day01/20.md)
     * 基础
-         * [面向对象](day01/14.md)
-         * [内存管理机制](day01/15.md)
-         * [内存泄露](day01/16.md)
-         * [线程、进程、协程](day01/17.md)
-         * [cookie、session](day01/18.md)
-         * [内置函数](day01/19.md)
-         * [filter](day01/21.md)
-         * [restful](day01/22.md)
-    
-
-
+        * [面向对象](day01/14.md)
+        * [内存管理机制](day01/15.md)
+        * [内存泄露](day01/16.md)
+        * [线程、进程、协程](day01/17.md)
+        * [cookie、session](day01/18.md)
+        * [内置函数](day01/19.md)
+        * [filter](day01/21.md)
+        * [restful](day01/22.md)
+        * [什么是gevent](day01/33.md)
+        * [简述触发器，函数，试图，存储过程？](day01/34.md)
 
