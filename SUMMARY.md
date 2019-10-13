@@ -23,6 +23,9 @@
         * [数据库优化](day01/22.md)
         * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
         * [数据库导入导出命令](day01/32.md)
+        * [索引](day01/44.md)
+        * [mysql日志](day01/45.md)
+        * [mysql优化](day01/47.md)
     * nginx
         * [nginx](day01/10.md)
         * [读写分离](day01/8.md)
@@ -31,6 +34,7 @@
         * [twemproxy](day01/12.md)
         * [数据类型](day01/13.md)
         * [发布订阅](day01/20.md)
+        * [redis rabbitmq kafka比较](day01/46.md)
     * 基础
         * [面向对象](day01/14.md)
         * [内存管理机制](day01/15.md)
