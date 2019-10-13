@@ -3,6 +3,7 @@
 * [说明](README.md)
 * 知识点
     * [加密算法](day01/1.md)
+    * [WebSocket](day01/35.md)
     * flask
         * [为什么flask生态不太好为什么还有很多公司用？](day01/31.md)
     * django
