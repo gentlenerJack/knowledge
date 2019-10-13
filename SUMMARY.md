@@ -41,4 +41,6 @@
         * [restful](day01/22.md)
         * [什么是gevent](day01/33.md)
         * [简述触发器，函数，试图，存储过程？](day01/34.md)
+        * [面向对象的设计模式](day01/37.md)
+        * [实现一个Singleton 单例类](day01/38.md)
 
