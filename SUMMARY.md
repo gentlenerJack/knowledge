@@ -49,9 +49,9 @@
          * [Redis的数据类型底层实现](day01/111.md)
          * [什么是 redis](day01/222.md)
          * [redis的两种持久化方式](day01/82.md)
-    * 基础
          * [基于redis的列表实现先进先出并写出代码](day01/67.md)
          * [redis消息订阅模式](day01/69.md)
+    * 基础 
          * [redis rabbitmq kafka比较](day01/46.md)
          * [面向对象](day01/14.md)
          * [内存管理机制](day01/15.md)
