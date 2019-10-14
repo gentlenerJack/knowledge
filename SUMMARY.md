@@ -31,6 +31,8 @@
         * [mysql日志](day01/45.md)
         * [mysql优化](day01/47.md)
         * [B Tree 和 B+Tree 的区别](day01/40.md)
+        * [mysql配置文件优化点](day01/85.md)
+        * [四个隔离级别](day01/86.md)
     * nginx
         * [nginx](day01/10.md)
         * [读写分离](day01/8.md)
