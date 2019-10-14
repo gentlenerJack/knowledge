@@ -3,7 +3,7 @@
 * [说明](README.md)
 * 知识点
     * [加密算法](day01/1.md)
-    * [WebSocket](day01/35.md)
+    * [WebSocket](day01/54.md)
     * flask
         * [为什么flask生态不太好为什么还有很多公司用？](day01/31.md)
     * django
@@ -23,7 +23,7 @@
     * mysql
         * [mysql分表分库](day01/6.md)
         * [读写分离](day01/8.md)
-        * [数据库优化](day01/22.md)
+        * [数据库优化](day01/26.md)
         * [使用 limit offset分页时, 为什么越往后翻越慢](day01/24.md)
         * [数据库导入导出命令](day01/32.md)
         * [索引](day01/44.md)
